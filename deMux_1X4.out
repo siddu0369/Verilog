@@ -1,0 +1,52 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x562774737a50 .scope module, "top" "top" 2 12;
+ .timescale 0 0;
+v0x562774748b70_0 .var "data", 0 0;
+v0x562774748c40_0 .net "out", 3 0, v0x562774748950_0;  1 drivers
+v0x562774748d10_0 .var "select", 1 0;
+S_0x562774737be0 .scope module, "m1" "deMux_1x4" 2 16, 2 1 0, S_0x562774737a50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "dataIn";
+    .port_info 1 /INPUT 2 "sel";
+    .port_info 2 /OUTPUT 4 "deMuxOut";
+v0x562774737e10_0 .net "dataIn", 0 0, v0x562774748b70_0;  1 drivers
+v0x562774748950_0 .var "deMuxOut", 3 0;
+v0x562774748a30_0 .net "sel", 1 0, v0x562774748d10_0;  1 drivers
+E_0x5627746fecc0 .event anyedge, v0x562774737e10_0, v0x562774748a30_0;
+    .scope S_0x562774737be0;
+T_0 ;
+    %wait E_0x5627746fecc0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x562774748950_0, 0, 4;
+    %load/vec4 v0x562774737e10_0;
+    %ix/getv 4, v0x562774748a30_0;
+    %store/vec4 v0x562774748950_0, 4, 1;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x562774737a50;
+T_1 ;
+    %vpi_call 2 18 "$dumpfile", "wave.vcd" {0 0 0};
+    %vpi_call 2 19 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x562774737a50 {0 0 0};
+    %vpi_call 2 20 "$monitor", "data = %b, select = %b, out  = %b", v0x562774748b70_0, v0x562774748d10_0, v0x562774748c40_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x562774748d10_0, 0, 2;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x562774748b70_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/home/siddu/Desktop/vivado/verilog/deMux_1X4.v";

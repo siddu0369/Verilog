@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sat Dec  6 12:37:43 2025
+# Process ID         : 176732
+# Current directory  : /home/siddu/Desktop/vivado/verilog
+# Command line       : vivado
+# Log file           : /home/siddu/Desktop/vivado/verilog/vivado.log
+# Journal file       : /home/siddu/Desktop/vivado/verilog/vivado.jou
+# Running On         : siddu
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.3 LTS
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12500H
+# CPU Frequency      : 1791.682 MHz
+# CPU Physical cores : 12
+# CPU Logical cores  : 16
+# Host memory        : 16370 MB
+# Swap memory        : 4294 MB
+# Total Virtual      : 20665 MB
+# Available Virtual  : 14764 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/siddu/Desktop/vivado/LMFS816410_AFE8108_12Gbps/vivado_run/project_1/project_1.xpr
+update_compile_order -fileset sources_1

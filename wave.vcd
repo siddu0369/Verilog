@@ -1,0 +1,170 @@
+$date
+	Sun Dec  7 13:36:00 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module ALU_tb $end
+$var wire 1 ! zeroFlg $end
+$var wire 1 " signFlg $end
+$var wire 1 # overflowFlg $end
+$var wire 1 $ carryFlg $end
+$var wire 1 % ParityFlg $end
+$var wire 4 & Out [3:0] $end
+$var wire 1 ' Cout $end
+$var reg 4 ( A [3:0] $end
+$var reg 4 ) B [3:0] $end
+$var reg 3 * Sel [2:0] $end
+$scope module alu0 $end
+$var wire 4 + A [3:0] $end
+$var wire 4 , B [3:0] $end
+$var wire 3 - Sel [2:0] $end
+$var wire 4 . xorOut [3:0] $end
+$var wire 4 / shiftOut [3:0] $end
+$var wire 4 0 orOut [3:0] $end
+$var wire 4 1 notOut [3:0] $end
+$var wire 4 2 andOut [3:0] $end
+$var wire 4 3 Sum [3:0] $end
+$var wire 4 4 Diff [3:0] $end
+$var wire 1 5 Carry $end
+$var wire 1 6 Borrow $end
+$var reg 1 ' Cout $end
+$var reg 4 7 Out [3:0] $end
+$var reg 1 % ParityFlg $end
+$var reg 1 $ carryFlg $end
+$var reg 1 # overflowFlg $end
+$var reg 1 " signFlg $end
+$var reg 1 ! zeroFlg $end
+$scope module a1 $end
+$var wire 4 8 A [3:0] $end
+$var wire 4 9 B [3:0] $end
+$var wire 4 : Sum [3:0] $end
+$var wire 1 5 Cout $end
+$upscope $end
+$scope module an1 $end
+$var wire 4 ; A [3:0] $end
+$var wire 4 < B [3:0] $end
+$var wire 4 = Out [3:0] $end
+$upscope $end
+$scope module n1 $end
+$var wire 4 > A [3:0] $end
+$var wire 4 ? Out [3:0] $end
+$upscope $end
+$scope module o1 $end
+$var wire 4 @ A [3:0] $end
+$var wire 4 A B [3:0] $end
+$var wire 4 B Out [3:0] $end
+$upscope $end
+$scope module s1 $end
+$var wire 4 C A [3:0] $end
+$var wire 4 D B [3:0] $end
+$var wire 4 E Diff [3:0] $end
+$var wire 1 6 Bout $end
+$upscope $end
+$scope module sh1 $end
+$var wire 4 F A [3:0] $end
+$var wire 4 G Out [3:0] $end
+$var wire 2 H pos [1:0] $end
+$var wire 1 I shift $end
+$upscope $end
+$scope module x1 $end
+$var wire 4 J A [3:0] $end
+$var wire 4 K B [3:0] $end
+$var wire 4 L Out [3:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110 L
+b1010 K
+b1100 J
+1I
+b1 H
+b1000 G
+b1100 F
+b10 E
+b1010 D
+b1100 C
+b1110 B
+b1010 A
+b1100 @
+b11 ?
+b1100 >
+b1000 =
+b1010 <
+b1100 ;
+b110 :
+b1010 9
+b1100 8
+b110 7
+06
+15
+b10 4
+b110 3
+b1000 2
+b11 1
+b1110 0
+b1000 /
+b110 .
+b0 -
+b1010 ,
+b1100 +
+b0 *
+b1010 )
+b1100 (
+1'
+b110 &
+1%
+1$
+1#
+0"
+0!
+$end
+#10000
+0%
+0$
+0#
+0'
+b10 &
+b10 7
+b1 *
+b1 -
+#20000
+1"
+b1000 &
+b1000 7
+b10 *
+b10 -
+#30000
+b1110 &
+b1110 7
+b11 *
+b11 -
+#40000
+1%
+0"
+b11 &
+b11 7
+b100 *
+b100 -
+#50000
+b110 &
+b110 7
+b101 *
+b101 -
+#60000
+0%
+1"
+b1000 &
+b1000 7
+b110 *
+b110 -
+#70000

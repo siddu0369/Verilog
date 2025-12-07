@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile current file",
+            "type": "shell",
+            "command": "iverilog",
+            "args": [
+                "-o", "${fileBasenameNoExtension}.out",
+                "${file}"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "run current simulation",
+            "type": "shell",
+            "command": "vvp",
+            "args": [
+                "${fileBasenameNoExtension}.out"
+            ],
+            "group": "test"
+        }
+    ]
+}
