@@ -1,0 +1,56 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x5fa19b458600 .scope module, "top" "top" 2 9;
+ .timescale 0 0;
+v0x5fa19b46ab40_0 .var "dataIn1", 0 15;
+v0x5fa19b46ac00_0 .net "out", 0 0, L_0x5fa19b46b120;  1 drivers
+v0x5fa19b46acd0_0 .var "sel1", 0 3;
+S_0x5fa19b458790 .scope module, "m1" "mux16to1" 2 14, 2 1 0, S_0x5fa19b458600;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "sel";
+    .port_info 1 /INPUT 16 "dataIn";
+    .port_info 2 /OUTPUT 1 "muxOut";
+L_0x70cce9a6e018 .functor BUFT 1, C4<001111>, C4<0>, C4<0>, C4<0>;
+v0x5fa19b4589c0_0 .net/2s *"_ivl_0", 5 0, L_0x70cce9a6e018;  1 drivers
+v0x5fa19b46a570_0 .net *"_ivl_2", 5 0, L_0x5fa19b46ae00;  1 drivers
+L_0x70cce9a6e060 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0x5fa19b46a650_0 .net *"_ivl_5", 1 0, L_0x70cce9a6e060;  1 drivers
+v0x5fa19b46a710_0 .net/s *"_ivl_6", 5 0, L_0x5fa19b46af70;  1 drivers
+v0x5fa19b46a7f0_0 .net "dataIn", 0 15, v0x5fa19b46ab40_0;  1 drivers
+v0x5fa19b46a920_0 .net "muxOut", 0 0, L_0x5fa19b46b120;  alias, 1 drivers
+v0x5fa19b46a9e0_0 .net "sel", 0 3, v0x5fa19b46acd0_0;  1 drivers
+L_0x5fa19b46ae00 .concat [ 4 2 0 0], v0x5fa19b46acd0_0, L_0x70cce9a6e060;
+L_0x5fa19b46af70 .arith/sub 6, L_0x70cce9a6e018, L_0x5fa19b46ae00;
+L_0x5fa19b46b120 .part/v.s v0x5fa19b46ab40_0, L_0x5fa19b46af70, 1;
+    .scope S_0x5fa19b458600;
+T_0 ;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x5fa19b46acd0_0, 0, 4;
+    %pushi/vec4 0, 0, 16;
+    %store/vec4 v0x5fa19b46ab40_0, 0, 16;
+    %end;
+    .thread T_0;
+    .scope S_0x5fa19b458600;
+T_1 ;
+    %vpi_call 2 17 "$monitor", "select = %b, data = %b, out = %b", v0x5fa19b46acd0_0, v0x5fa19b46ab40_0, v0x5fa19b46ac00_0 {0 0 0};
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x5fa19b46acd0_0, 0, 4;
+    %delay 1, 0;
+    %pushi/vec4 65535, 0, 16;
+    %store/vec4 v0x5fa19b46ab40_0, 0, 16;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "/home/siddu/Desktop/vivado/verilog/16x1_mux.v";
